@@ -1,0 +1,22 @@
+.HeaderContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    width: 100%;
+    padding: 1rem; 
+    margin: 0 4rem;
+}
+
+.Logo {
+    color: #597cff;
+    margin-right: auto; /* This pushes everything else to the right */
+    font-family: "Cherry Bomb One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18pt;
+}
+
+.SearchBar{
+    flex: 1;
+    margin: 0rem 4rem
+}
