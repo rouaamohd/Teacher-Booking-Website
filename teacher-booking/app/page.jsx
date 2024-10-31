@@ -4,38 +4,41 @@ import {useEffect, useState} from "react";
 import styles from "./page.module.css";
 import Loader from "./components/Loader";
 import Header from "./components/Header";
-import Teacher from "./teachers/teacher";
+import Teacher from "./teachers/Teacher";
+import Teachers from "./teachers/Teachers";
+import teachersRepo from "./repo/teachersRepo";
+
 
 export default function Home() {
-  // Simulate loading time
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    setTimeout(() => setLoading(false), 4000);
-  }, []);
+    const [loading, setLoading] = useState(true);
+    const [teachers, setTeachers] = useState([]);
 
-  return (
-    <>
-      {loading ? (
-        <Loader />
-      ) : (
-        <body className={styles.Home}>
-          <header className={styles.Header}>
-            <Header/>
-          </header>
-          <main className={styles.CardsListHolder}>
-            {/* ADD TEACHERS COMPONENT HERE */}
-            <Teacher/>
-            <Teacher/>
-            <Teacher/>
-            <Teacher/>
-            <Teacher/>
-            <Teacher/>
-            <Teacher/>
-            <Teacher/>
-          </main>
-          <footer></footer>
-        </body>
-      )}
-    </>
-  );
+    useEffect(() => {
+        // Fetch the teachers data asynchronously
+        async function fetchTeachers() {
+            const fetchedTeachers = await teachersRepo.getTeachers();
+            setTeachers(fetchedTeachers);
+            setLoading(false); // Update loading state once data is fetched
+        }
+
+        fetchTeachers();
+    }, []); // Empty dependency array ensures this effect runs only once on mount
+
+    return (
+        <>
+            {loading ? (
+                <Loader />
+            ) : (
+                <body className={styles.Home}>
+                    <header className={styles.Header}>
+                        <Header />
+                    </header>
+                    <main className={styles.CardsListHolder}>
+                        <Teachers initialTeachers={teachers} />
+                    </main>
+                    <footer></footer>
+                </body>
+            )}
+        </>
+    );
 }

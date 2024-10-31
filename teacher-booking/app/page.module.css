@@ -1,37 +1,6 @@
-/* .Home {
-    background: rgb(217,234,255);
-    background: linear-gradient(0deg, rgba(217,234,255,1) 0%, rgba(222,232,225,1) 100%); 
-    min-height: 100vh;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overscroll-behavior: none;
-    margin: 0;
-  } */
 
-  /* @keyframes gradientShift {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-} */
 
 .Home {
-  /* background: linear-gradient(90deg, rgba(217, 234, 255, 1), rgba(222, 232, 225, 1), rgba(217, 234, 255, 1)); */
-  /* background-size: 200% 200%; */
-  /* animation: gradientShift 12s ease infinite; */
-  /* background-color: #f7f3e8;; */
-  /* background-color: whitesmoke; */
-  /* background: rgb(224,255,248); */
-  /* background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgba(255,222,213,1) 100%); */
-  /* background-color: #ebebeb; */
   background-color: white;
   min-height: 100vh;
   padding: 20px;

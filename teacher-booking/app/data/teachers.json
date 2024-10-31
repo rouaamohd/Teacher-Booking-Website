@@ -1,0 +1,119 @@
+[
+  {
+    "id": 1,
+    "name": "Dr. Emily Johnson",
+    "qualifications": "PhD in Molecular Biology, Harvard",
+    "teachingExperience": "12 years",
+    "image": "/teacher_images/woman 1.jpg",
+    "courseOverview": "In-depth exploration of genetic mutations and cellular processes. Bi-weekly lab projects.",
+    "reviews": {
+      "rating": 4.9,
+      "text": "Exceptionally clear and engaging, makes complex topics accessible. - Mark T."
+    },
+    "subjectCode": "BIO"
+  },
+  {
+    "id": 2,
+    "name": "Dr. Sarah Lee",
+    "qualifications": "PhD in Neuroscience, Stanford",
+    "teachingExperience": "8 years",
+    "image": "/teacher_images/woman 2.jpg",
+    "courseOverview": "Advanced neuroscience topics, including neuroplasticity and cognitive therapy.",
+    "reviews": {
+      "rating": 4.7,
+      "text": "Brilliant lectures and hands-on labs. - Emily R."
+    },
+    "subjectCode": "NEURO"
+  },
+  {
+    "id": 3,
+    "name": "Dr. Jessica Smith",
+    "qualifications": "PhD in Organic Chemistry, MIT",
+    "teachingExperience": "10 years",
+    "image": "/teacher_images/woman 3.jpg",
+    "courseOverview": "Detailed study of molecular structures, reactions, and analytical techniques in Organic Chemistry. Weekly lab sessions included.",
+    "reviews": {
+      "rating": 4.8,
+      "text": "Inspirational and thorough, with practical applications in every lesson. - Jane Doe"
+    },
+    "subjectCode": "CHEM"
+  },
+  {
+    "id": 4,
+    "name": "Dr. Anna Kim",
+    "qualifications": "PhD in Physics, Caltech",
+    "teachingExperience": "5 years",
+    "image": "/teacher_images/woman 4.jpg",
+    "courseOverview": "Covers quantum mechanics and particle physics with monthly lab sessions.",
+    "reviews": {
+      "rating": 4.6,
+      "text": "Makes difficult subjects palatable and exciting. - Luke P."
+    },
+    "subjectCode": "PHYS"
+  },
+  {
+    "id": 5,
+    "name": "Dr. Rachel Adams",
+    "qualifications": "PhD in Environmental Science, Yale",
+    "teachingExperience": "15 years",
+    "image": "/teacher_images/woman 5.jpg",
+    "courseOverview": "Focus on sustainable development and climate change impacts.",
+    "reviews": {
+      "rating": 4.85,
+      "text": "Extremely knowledgeable and passionate about environmental issues. - Sarah L."
+    },
+    "subjectCode": "ENV"
+  },
+  {
+    "id": 6,
+    "name": "Dr. James Wilson",
+    "qualifications": "PhD in Applied Mathematics, Princeton",
+    "teachingExperience": "9 years",
+    "image": "/teacher_images/man 1.jpg",
+    "courseOverview": "Applied mathematical techniques for engineering and technology solutions.",
+    "reviews": {
+      "rating": 4.9,
+      "text": "A mathematical genius, explains concepts clearly with practical examples. - Daniel F."
+    },
+    "subjectCode": "MATH"
+  },
+  {
+    "id": 7,
+    "name": "Dr. Robert Brown",
+    "qualifications": "PhD in Computer Science, MIT",
+    "teachingExperience": "10 years",
+    "image": "/teacher_images/man 2.jpg",
+    "courseOverview": "Software development practices and machine learning implementations.",
+    "reviews": {
+      "rating": 5.0,
+      "text": "Outstanding mentor in AI and computing technologies. - Alice M."
+    },
+    "subjectCode": "CS"
+  },
+  {
+    "id": 8,
+    "name": "Dr. Michael Davis",
+    "qualifications": "PhD in Economics, University of Chicago",
+    "teachingExperience": "7 years",
+    "image": "/teacher_images/man 3.jpg",
+    "courseOverview": "Economic theories and their applications in current global markets.",
+    "reviews": {
+      "rating": 4.5,
+      "text": "Very insightful, provides great context for economic models. - Omar N."
+    },
+    "subjectCode": "ECO"
+  },
+  {
+    "id": 9,
+    "name": "Dr. John Miller",
+    "qualifications": "PhD in History, Columbia",
+    "teachingExperience": "11 years",
+    "image": "/teacher_images/man 4.jpg",
+    "courseOverview": "Modern history with a focus on geopolitical developments after WW2.",
+    "reviews": {
+      "rating": 4.8,
+      "text": "Engages with all students, making history come alive. - Betty C."
+    },
+    "subjectCode": "HIST"
+  }
+]

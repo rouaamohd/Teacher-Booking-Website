@@ -3,9 +3,6 @@
     flex-direction: column;
     align-items: center;
     border-radius: 15px;
-    /* background-color: #ffffff; */
-    /* background-color: #f3f3f4; */
-    /* background-color: #9e9ea7; */
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     width: 300px;
