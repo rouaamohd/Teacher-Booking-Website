@@ -3,17 +3,17 @@
     align-items: center;
     justify-content: space-between;
     background-color: #035f4b;
-    padding: 1rem 6rem;
+    padding: 1.5rem 6rem;
   }
   
   .Logo {
     color: var(--mywhite);
     font-family: "Cherry Bomb One", system-ui;
-    font-weight: 400;
+    font-weight: 500;
     font-style: normal;
-    font-size: 18pt;
+    font-size: 20pt;
     flex: 1;
-}
+  }
   
   .navLinks {
     list-style-type: none;
@@ -28,6 +28,11 @@
   .navItem {
     color: var(--mywhite);
     cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .navItem:hover {
+    text-decoration: underline white;
   }
   
   .auth {
@@ -41,5 +46,11 @@
     padding: 5px 10px;
     cursor: pointer;
     border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .authButton:hover {
+    background-color: var(--mywhite);
+    color: #035f4b; /* Match the background color of the navbar */
   }
   
