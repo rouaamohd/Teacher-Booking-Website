@@ -47,8 +47,6 @@ TeacherBooking 📚
    ```bash
    npm run dev
    ```
-  ```bash
-  npm run dev
-5. **Start the development server**
+
 
 
