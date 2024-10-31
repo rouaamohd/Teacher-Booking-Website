@@ -69,61 +69,36 @@ const MenuComponent = () => {
         </a>
         <div className={styles.submenu}>
           <div className={styles.submenuItem}>
-            <a href="#" className={styles.submenuLink}>
-              {" "}
-              Biology{" "}
-            </a>
+            <a href="#" className={styles.submenuLink}> Biology </a>
           </div>
           <div className={styles.submenuItem}>
-            <a href="#" className={styles.submenuLink}>
-              {" "}
-              Neuroscience{" "}
-            </a>
+            <a href="#" className={styles.submenuLink}> Neuroscience </a>
           </div>
           <div className={styles.submenuItem}>
-            <a href="#" className={styles.submenuLink}>
-              {" "}
-              Chemistry{" "}
-            </a>
+            <a href="#" className={styles.submenuLink}> Chemistry </a>
           </div>
           <div className={styles.submenuItem}>
-            <a href="#" className={styles.submenuLink}>
-              {" "}
-              Physics{" "}
-            </a>
+            <a href="#" className={styles.submenuLink}> Physics </a>
           </div>
           <div className={styles.submenuItem}>
-            <a href="#" className={styles.submenuLink}>
-              {" "}
-              Environmental Science{" "}
-            </a>
+            <a href="#" className={styles.submenuLink}> Environmental Science </a>
           </div>
           <div className={styles.submenuItem}>
-            <a href="#" className={styles.submenuLink}>
-              {" "}
-              Mathematics{" "}
-            </a>
+            <a href="#" className={styles.submenuLink}> Mathematics </a>
           </div>
           <div className={styles.submenuItem}>
-            <a href="#" className={styles.submenuLink}>
-              {" "}
-              Computer Science{" "}
-            </a>
+            <a href="#" className={styles.submenuLink}> Computer Science </a>
           </div>
           <div className={styles.submenuItem}>
-            <a href="#" className={styles.submenuLink}>
-              {" "}
-              Economics{" "}
-            </a>
+            <a href="#" className={styles.submenuLink}> Economics </a>
           </div>
           <div className={styles.submenuItem}>
-            <a href="#" className={styles.submenuLink}>
-              {" "}
-              History{" "}
-            </a>
+            <a href="#" className={styles.submenuLink}> History </a>
           </div>
         </div>
+        <div className={styles.Filter}></div>
       </div>
     </div>
-  );
-};
+  )
+}
+

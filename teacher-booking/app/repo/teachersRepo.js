@@ -2,7 +2,6 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 class TeachersRepo {
-  // #teachersFilePath = path.join(process.cwd(), 'app/data/teachers.json');
 
   async getTeachers() {
     try {
@@ -12,7 +11,7 @@ class TeachersRepo {
     }
   }
   async getSearchedTeachers(filter) {
-    filter = filter.toLowerCase();  // You might want to remove this if you're not handling case insensitivity in your application logic
+    filter = filter.toLowerCase();
     try {
       return await prisma.teacher.findMany({
         where: {
