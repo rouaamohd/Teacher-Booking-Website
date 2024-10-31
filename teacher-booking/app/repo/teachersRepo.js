@@ -1,3 +1,6 @@
+import { PrismaClient } from "@prisma/client";
+const prisma = new PrismaClient();
+
 class TeachersRepo {
   // #teachersFilePath = path.join(process.cwd(), 'app/data/teachers.json');
 
@@ -17,6 +20,16 @@ class TeachersRepo {
   async getTeachersBySubject(subject) {
     try {
     } catch (error) {}
+  }
+
+  async getTeacherReview(teacherId){
+    try{
+      return prisma.review.findFirst({
+        where: {teacherId}
+      })
+    }catch (error){
+      return { error: error.message };
+    }
   }
 }
 export default new TeachersRepo();

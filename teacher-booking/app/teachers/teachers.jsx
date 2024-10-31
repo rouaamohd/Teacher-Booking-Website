@@ -1,10 +1,10 @@
-"use client";
+"use client"
+
 import React, { useState } from "react"; 
 import Teacher from "./Teacher";
 import styles from "./teachers.module.css";
 
 export default function Teachers({ initialTeachers }) {
-  // const [teachers, setTeachers] = useState(initialTeachers); 
   const [teachers, setTeachers] = useState(initialTeachers || []);
 
   async function handleLoadTeachers(value) {
@@ -14,6 +14,7 @@ export default function Teachers({ initialTeachers }) {
 
   return (
     <div className={styles.teachersContainer}>
+      {console.log(teachers)}
       {
         teachers.map((teacher) => 
           <Teacher teacher={teacher}/> 

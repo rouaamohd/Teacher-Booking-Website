@@ -16,8 +16,9 @@ export default function Home() {
     useEffect(() => {
         // Fetch the teachers data asynchronously
         async function fetchTeachers() {
-            const fetchedTeachers = await teachersRepo.getTeachers();
-            setTeachers(fetchedTeachers);
+            // const fetchedTeachers = await teachersRepo.getTeachers();
+            const fetchedTeachers = await fetch('/api/teachers/', {method: 'GET'})
+            setTeachers(await fetchedTeachers.json());
             setLoading(false); // Update loading state once data is fetched
         }
 

@@ -5,14 +5,15 @@
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 300px;
-    height: 500px;
+    width: 320px;
+    height: 550px;
     perspective: 1000px;
     margin: 1rem auto;
     position: relative;
 }
 
-.front, .back {
+.front,
+.back {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -21,10 +22,10 @@
     border-radius: 15px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Ensures content starts from the left */
+    align-items: flex-start;
     justify-content: space-around;
-    padding: 1.5rem; /* Adequate padding */
-    text-align: left; /* Aligns text to the left */
+    padding: 1.5rem;
+    text-align: left;
 }
 
 
@@ -41,30 +42,26 @@
     background-color: #f8f8f8;
     display: flex;
     flex-direction: column;
-
     text-align: left;
-    /* justify-content: center; */
     justify-self: flex-start;
-    padding: 20px; /* Add more padding for better text separation */
+    padding: 20px;
     border-radius: 15px;
-    text-align: left; /* Ensure text alignment is left */
-    color: #333; /* Darker text for better readability */
+    text-align: left;
+    color: #333;
 }
 
-.backtitle{
-
-    font-size: 1.1rem; /* Slightly larger font size for titles */
-    font-weight: bold; /* Bold font for titles */
+.backtitle {
+    font-size: 1.1rem;
+    font-weight: bold;
     margin-top: 10px;
     margin-bottom: 5px;
-    color: #034d4a; /* Use a consistent theme color for titles */
+    color: #034d4a;
     text-align: center;
-    
 }
 
-.back .reviews { /* Special class for review section */
+.back .reviews {
     padding-top: 5px;
-    border-top: 1px solid #e0e0e0; /* Subtle separator for reviews */
+    border-top: 1px solid #e0e0e0;
 }
 
 .flipped .front {
@@ -82,9 +79,8 @@
     left: 0;
     width: 100%;
     height: 30%;
-    /* background-color: #05947548; */
-    background: rgb(5,148,117);
-    background: linear-gradient(276deg, rgba(5,148,117,0.379598494671306) 0%, rgba(255,255,255,1) 50%, rgba(5,148,117,0.38) 100%); 
+    background: rgb(5, 148, 117);
+    background: linear-gradient(276deg, rgba(0, 74, 58, 0.38) 0%, rgb(212, 212, 212) 50%, rgba(0, 74, 58, 0.38) 100%);
     z-index: 1;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
@@ -102,12 +98,10 @@
 }
 
 .imageContainer {
-    /* width: 75%; */
-    width: 80%; /* Adjusted for better image presentation */
-    height: auto; /* Added height to maintain aspect ratio */
+    width: 200px;
+    /* height: 200px; */
     overflow: hidden;
     border-radius: 50%;
-    /* border-color: #ebebeb; */
     border-color: var(--mywhite);
     border-width: 4pt;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
@@ -117,13 +111,14 @@
 .image {
     width: 100%;
     height: auto;
-    object-fit: cover;
+    /* height: 100%; */
+    object-fit: cover; 
+    object-position: center;
 }
 
 
 .infoContainer {
     padding: 0.5rem 0.5rem;
-    /* text-align: center; */
     width: 100%;
 }
 
@@ -134,38 +129,34 @@
     flex-direction: column;
 }
 
+.reviewText {
+    font-style: italic;
+}
+
 
 .name {
-    /* font-size: 1.2rem; */
     font-size: 1.4rem;
     color: #034d4a;
-    /* Larger font size for name */
     font-weight: bold;
-    /* Bold for emphasis */
     align-self: center;
 }
 
 .class {
     font-size: 1rem;
     color: #666666;
-    font-weight: normal; /* Adjusted for differentiation from the name */
+    font-weight: normal;
 }
 
 .buttonContainer {
     display: flex;
     flex-direction: column;
-    /* Stack buttons vertically */
     gap: 1rem;
-    /* Space between buttons */
     width: 100%;
-    /* Full width to fit container */
     padding-top: 0.5rem;
-    /* Space above buttons */
 }
 
 .bookBtn {
     color: #04866a;
-    /* padding: 0.4rem 1rem; */
     font-weight: 550;
     font-style: normal;
     font-size: 12pt;
@@ -204,6 +195,6 @@
 }
 
 .star {
-    color: var(--myorange); 
+    color: var(--myorange);
     font-size: 2rem;
 }
