@@ -1,6 +1,6 @@
-# Project Title: TeacherBooking 📚
+TeacherBooking 📚
 
-**TeacherBooking** is a dynamic web application designed to streamline the process of finding and booking appointments with educational professionals across a variety of subjects. This platform caters to students seeking to enhance their knowledge base outside of the traditional classroom setting.
+**TeacherBooking** is a dynamic web application designed to streamline the process of finding and booking appointments with educational professionals across a variety of subjects.
 
 ## Features 🌟
 
