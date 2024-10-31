@@ -2,17 +2,21 @@
 
 import React, { useState } from "react";
 import styles from "./Header.module.css";
+import NavBar from "./NavBar";
 
 export default function Header({ handleSearch, handleFilterSelect }) {
   return (
+    <div className={styles.FullHeader}>
+    <NavBar className={styles.Nav}/>
     <div className={styles.HeaderContainer}>
-      <div className={styles.Logo}>teacherBooking.</div>
+      {/* <div className={styles.Logo}>teacherBooking.</div> */}
       <div className={styles.SearchBar}>
         <SearchBarComponent handleSearch={handleSearch} />
       </div>
       <div className={styles.Filter}>
         <MenuComponent handleFilterSelect={handleFilterSelect}/>
       </div>
+    </div>
     </div>
   );
 }
