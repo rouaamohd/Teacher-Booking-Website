@@ -42,7 +42,11 @@ TeacherBooking 📚
 2. **Install dependencies**
    ```bash
    npm install
+   ```
 3. **Start the development server**
+   ```bash
+   npm run dev
+   ```
   ```bash
   npm run dev
 5. **Start the development server**
