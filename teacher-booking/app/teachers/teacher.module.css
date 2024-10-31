@@ -99,7 +99,7 @@
 
 .imageContainer {
     width: 200px;
-    /* height: 200px; */
+    height: 200px;
     overflow: hidden;
     border-radius: 50%;
     border-color: var(--mywhite);
@@ -110,8 +110,8 @@
 
 .image {
     width: 100%;
-    height: auto;
-    /* height: 100%; */
+    /* height: auto; */
+    height: 100%;
     object-fit: cover; 
     object-position: center;
 }

@@ -14,12 +14,22 @@ class TeachersRepo {
 
   async getTeachersByName(name) {
     try {
-    } catch (error) {}
+      return prisma.review.findFirst({
+        where: {name}
+      })
+    } catch (error) {
+      return { error: error.message };
+    }
   }
 
-  async getTeachersBySubject(subject) {
+  async getTeachersBySubject(subjectCode) {
     try {
-    } catch (error) {}
+      return prisma.review.findFirst({
+        where: {subjectCode}
+      })
+    } catch (error) {
+      return { error: error.message };
+    }
   }
 
   async getTeacherReview(teacherId){
