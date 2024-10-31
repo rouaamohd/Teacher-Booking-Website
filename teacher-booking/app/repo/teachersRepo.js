@@ -11,33 +11,42 @@ class TeachersRepo {
       return { error: error.message };
     }
   }
-
-  async getTeachersByName(name) {
+  async getSearchedTeachers(filter) {
+    filter = filter.toLowerCase();  // You might want to remove this if you're not handling case insensitivity in your application logic
     try {
-      return prisma.review.findFirst({
-        where: {name}
-      })
+      return await prisma.teacher.findMany({
+        where: {
+          OR: [
+            {name: {contains: filter}},
+            {subjectCode: {contains: filter}},
+            {qualifications: {contains: filter}},
+            {courseOverview: {contains: filter}},
+          ],
+        },
+      });
     } catch (error) {
+      console.error("Error searching teachers:", error);
       return { error: error.message };
     }
   }
+  
 
   async getTeachersBySubject(subjectCode) {
     try {
       return prisma.review.findFirst({
-        where: {subjectCode}
-      })
+        where: { subjectCode },
+      });
     } catch (error) {
       return { error: error.message };
     }
   }
 
-  async getTeacherReview(teacherId){
-    try{
+  async getTeacherReview(teacherId) {
+    try {
       return prisma.review.findFirst({
-        where: {teacherId}
-      })
-    }catch (error){
+        where: { teacherId },
+      });
+    } catch (error) {
       return { error: error.message };
     }
   }
