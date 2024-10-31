@@ -33,13 +33,16 @@
 .Filter{
     /* flex: 1; */
     /* margin: 0rem 4rem */
+
 }
 .menu {
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.6;
     width: fit-content;
     display: flex;
     list-style: none;
+    color: var(--mygreen);
+    font-weight: 500;
 }
 .menu a {
     text-decoration: none;
@@ -73,9 +76,10 @@
     transition: transform 0.48s cubic-bezier(0.23, 1, 0.32, 1);
 }
 .menu .link svg {
-    width: 14px;
-    height: 14px;
-    fill: #000000;
+    width: 16px;
+    height: 16px;
+    /* fill: #000000; */
+    fill: var(--mygreen);
     transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
 }
 .link{
