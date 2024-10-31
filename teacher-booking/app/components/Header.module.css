@@ -8,15 +8,52 @@
 }
 
 .Logo {
-    color: #597cff;
-    margin-right: auto; /* This pushes everything else to the right */
+    /* color: #597cff; */
+    /* color: var(--tertiary); */
+    /* color: #ED5024; */
+    color: var(--mygreen);
+    margin-right: auto; /* pushes everything else to the right */
     font-family: "Cherry Bomb One", system-ui;
     font-weight: 400;
     font-style: normal;
     font-size: 18pt;
 }
 
+/* .LogoFirst{
+    color: var(--myorange);
+}
+
+.LogoSecond{
+    color: var(--mygreen);
+} */
+
 .SearchBar{
     flex: 1;
     margin: 0rem 4rem
+}
+
+/* For iPad screen size adjustments */
+@media (max-width: 768px) {
+    .HeaderContainer {
+        margin: 0 2rem;
+    }
+    .SearchBar, .Logo{
+        margin: 1rem 1rem;
+    }
+}
+
+/* For phone screen size adjustments */
+@media (max-width: 890px) {
+    .HeaderContainer {
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center; 
+        margin: 0 1rem; 
+        text-align: center; 
+        overscroll-behavior: none;
+    }
+    .SearchBar, .Logo{
+        margin: 1rem 0rem;
+        width: 100%
+    }
 }

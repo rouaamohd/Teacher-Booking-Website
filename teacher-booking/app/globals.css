@@ -2,9 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
+} */
+
+:root {
+  --background: #edf3fa;
+  --secondary: #FEFFFF;
+  --tertiary: #000003;
+  --text1: #383734;
+  --mywhite: #FFFEFA;
+  --mybeige: #F7F3E8;
+  --mydarkbeige: #B6B3AB;
+  --myorange: #ED5024;
+  --mygreen: #059475;
+  --mygrey: #383734;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,5 +38,5 @@ html, body {
   margin: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
 }

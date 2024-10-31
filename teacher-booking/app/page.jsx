@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 import styles from "./page.module.css";
 import Loader from "./components/Loader";
 import Header from "./components/Header";
+import Teacher from "./teachers/teacher";
 
 export default function Home() {
   // Simulate loading time
@@ -23,6 +24,14 @@ export default function Home() {
           </header>
           <main className={styles.CardsListHolder}>
             {/* ADD TEACHERS COMPONENT HERE */}
+            <Teacher/>
+            <Teacher/>
+            <Teacher/>
+            <Teacher/>
+            <Teacher/>
+            <Teacher/>
+            <Teacher/>
+            <Teacher/>
           </main>
           <footer></footer>
         </body>

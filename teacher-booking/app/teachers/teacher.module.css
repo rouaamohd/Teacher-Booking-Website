@@ -1,0 +1,212 @@
+.CardContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    /* background-color: #ffffff; */
+    /* background-color: #f3f3f4; */
+    /* background-color: #9e9ea7; */
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 300px;
+    height: 500px;
+    perspective: 1000px;
+    margin: 1rem auto;
+    position: relative;
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.6s ease;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Ensures content starts from the left */
+    justify-content: space-around;
+    padding: 1.5rem; /* Adequate padding */
+    text-align: left; /* Aligns text to the left */
+}
+
+
+.front {
+    transform: rotateY(0deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.back {
+    transform: rotateY(180deg);
+    background-color: #f8f8f8;
+    display: flex;
+    flex-direction: column;
+
+    text-align: left;
+    /* justify-content: center; */
+    justify-self: flex-start;
+    padding: 20px; /* Add more padding for better text separation */
+    border-radius: 15px;
+    text-align: left; /* Ensure text alignment is left */
+    color: #333; /* Darker text for better readability */
+}
+
+.backtitle{
+
+    font-size: 1.1rem; /* Slightly larger font size for titles */
+    font-weight: bold; /* Bold font for titles */
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #034d4a; /* Use a consistent theme color for titles */
+    text-align: center;
+    
+}
+
+.back .reviews { /* Special class for review section */
+    padding-top: 5px;
+    border-top: 1px solid #e0e0e0; /* Subtle separator for reviews */
+}
+
+.flipped .front {
+    transform: rotateY(-180deg);
+}
+
+.flipped .back {
+    transform: rotateY(0deg);
+}
+
+
+.backgroundContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    /* background-color: #05947548; */
+    background: rgb(5,148,117);
+    background: linear-gradient(276deg, rgba(5,148,117,0.379598494671306) 0%, rgba(255,255,255,1) 50%, rgba(5,148,117,0.38) 100%); 
+    z-index: 1;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+
+.CardContainer:hover {
+    transform: scale(1.03);
+    box-shadow: #06b08b 0px 1px 4px;
+}
+
+.CardContainer:hover .imageContainer {
+    transform: rotate(-3deg) scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.imageContainer {
+    /* width: 75%; */
+    width: 80%; /* Adjusted for better image presentation */
+    height: auto; /* Added height to maintain aspect ratio */
+    overflow: hidden;
+    border-radius: 50%;
+    /* border-color: #ebebeb; */
+    border-color: var(--mywhite);
+    border-width: 4pt;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    z-index: 2;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+.infoContainer {
+    padding: 0.5rem 0.5rem;
+    /* text-align: center; */
+    width: 100%;
+}
+
+.Info {
+    text-align: left;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.name {
+    /* font-size: 1.2rem; */
+    font-size: 1.4rem;
+    color: #034d4a;
+    /* Larger font size for name */
+    font-weight: bold;
+    /* Bold for emphasis */
+    align-self: center;
+}
+
+.class {
+    font-size: 1rem;
+    color: #666666;
+    font-weight: normal; /* Adjusted for differentiation from the name */
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    /* Stack buttons vertically */
+    gap: 1rem;
+    /* Space between buttons */
+    width: 100%;
+    /* Full width to fit container */
+    padding-top: 0.5rem;
+    /* Space above buttons */
+}
+
+.bookBtn {
+    color: #04866a;
+    /* padding: 0.4rem 1rem; */
+    font-weight: 550;
+    font-style: normal;
+    font-size: 12pt;
+    border: 2px solid #078d70;
+    cursor: pointer;
+    transform: 0.3s ease;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    padding: 0.6rem 0;
+}
+
+
+.bookBtn:hover {
+    background-color: #06b08b27;
+    color: var(--mygrey);
+}
+
+.more {
+    color: #04866a;
+    font-weight: 550;
+    font-style: normal;
+    font-size: 12pt;
+    text-decoration: underline;
+}
+
+.more:hover {
+    color: var(--mygrey);
+}
+
+.starRating {
+    display: flex;
+    gap: 2px;
+    font-size: 1.2rem;
+    color: var(--myorange);
+    margin-bottom: 5px;
+}
+
+.star {
+    color: var(--myorange); 
+    font-size: 2rem;
+}
