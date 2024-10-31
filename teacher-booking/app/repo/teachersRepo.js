@@ -2,7 +2,6 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 class TeachersRepo {
-
   async getTeachers() {
     try {
       return prisma.teacher.findMany();
@@ -10,16 +9,17 @@ class TeachersRepo {
       return { error: error.message };
     }
   }
+
   async getSearchedTeachers(filter) {
     filter = filter.toLowerCase();
     try {
       return await prisma.teacher.findMany({
         where: {
           OR: [
-            {name: {contains: filter}},
-            {subjectCode: {contains: filter}},
-            {qualifications: {contains: filter}},
-            {courseOverview: {contains: filter}},
+            { name: { contains: filter } },
+            { subjectCode: { contains: filter } },
+            { qualifications: { contains: filter } },
+            { courseOverview: { contains: filter } },
           ],
         },
       });
@@ -28,12 +28,17 @@ class TeachersRepo {
       return { error: error.message };
     }
   }
-  
 
-  async getTeachersBySubject(subjectCode) {
+  async getTeachersBySubject(subject) {
+    subject = subject.toLowerCase();
     try {
-      return prisma.review.findFirst({
-        where: { subjectCode },
+      return await prisma.teacher.findMany({
+        where: {
+          OR: [
+            { qualifications: { contains: subject } },
+            { courseOverview: { contains: subject } },
+          ],
+        },
       });
     } catch (error) {
       return { error: error.message };

@@ -31,8 +31,8 @@
     justify-content: flex-end;
 } */
 .Filter{
-    flex: 1;
-    margin: 0rem 4rem
+    /* flex: 1; */
+    /* margin: 0rem 4rem */
 }
 .menu {
     font-size: 16px;
@@ -162,6 +162,10 @@
 }
 .submenu .submenuLink:hover {
     color: #ffffff;
+}
+
+.submenu{
+    background-color: rgba(0, 108, 84, 0.191);
 }
 
 .group {

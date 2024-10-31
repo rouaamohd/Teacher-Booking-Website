@@ -32,10 +32,33 @@ export default function Home() {
     }
   };
 
+  const fetchTeachersBySubject = async (val) => {
+    try {
+      const response = await fetch(`/api/teachers?subject=${encodeURIComponent(val)}`);
+      if (!response.ok) {
+        throw new Error(`Error: ${response.statusText}`);
+      }
+      const data = await response.json();
+      if (data.error) {
+        throw new Error(data.error);
+      }
+      setTeachers(data);
+    } catch (error) {
+      console.error("Failed to fetch teachers:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const handleSearch = (searchValue) => {
     setLoading(true);
     fetchTeachers(searchValue);
   };
+
+  const handleFilter = (filter) => {
+    setLoading(true);
+    fetchTeachersBySubject(filter)
+  }
 
   return (
     <>
@@ -43,7 +66,7 @@ export default function Home() {
         <Loader />
       ) : (
         <div className={styles.Home}>
-          <Header handleSearch={handleSearch} />
+          <Header handleSearch={handleSearch} handleFilterSelect={handleFilter}/>
           <main className={styles.CardsListHolder}>
             <Teachers initialTeachers={teachers} />
           </main>
