@@ -16,9 +16,9 @@
     flex-direction: column;
     width: 100%;
     margin: 0 auto;
-    opacity: 0;
+    /* opacity: 0; */
     z-index: 30;
-    animation: fadeInLeft 1s ease forwards;
+    /* animation: fadeInLeft 1s ease forwards; */
 }
 .Nav{
     width: 100%;
@@ -31,6 +31,8 @@
     width: 100%;
     padding: 1rem 2rem;
     margin: 0 auto;
+    opacity: 0;
+    animation: fadeInLeft 1s ease forwards;
 }
 
 .SearchBar {
