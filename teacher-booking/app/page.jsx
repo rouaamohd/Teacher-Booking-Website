@@ -25,14 +25,15 @@ export default function Home() {
         throw new Error(data.error);
       }
       setTeachers(data);
-      
     } catch (error) {
       console.error("Failed to fetch teachers:", error);
     } finally {
-      setLoading(false);
+      // Delay the loading state change to show the loader for a bit longer
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000); // Adjust the delay time (in milliseconds) as desired
     }
   };
-
   const fetchTeachersBySubject = async (val) => {
     try {
       const response = await fetch(`/api/teachers?subject=${encodeURIComponent(val)}`);
