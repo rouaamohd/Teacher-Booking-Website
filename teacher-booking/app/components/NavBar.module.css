@@ -53,4 +53,34 @@
     background-color: var(--mywhite);
     color: #035f4b; /* Match the background color of the navbar */
   }
+
+  /* For iPad screen size adjustments */
+@media (max-width: 768px) {
+  .HeaderContainer {
+      margin: 0 2rem;
+  }
+
+  .SearchBar,
+  .Logo {
+      margin: 1rem 1rem;
+  }
+}
+
+/* For phone screen size adjustments */
+@media (max-width: 890px) {
+  .navbar , .navLinks{
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overscroll-behavior: none;
+  }
+
+  .navLinks,
+  .auth
+  .Logo {
+      margin: 1rem 0rem;
+      width: 100%
+  }
+}
   

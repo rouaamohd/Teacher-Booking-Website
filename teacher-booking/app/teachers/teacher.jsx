@@ -8,10 +8,10 @@ const StarRating = ({ rating }) => {
   const stars = Array.from({ length: 5 }, (_, index) => {
     const full = index < Math.floor(rating);
     const half = index === Math.floor(rating) && rating % 1 !== 0;
-    
+
     return (
       <span key={index} className={styles.star}>
-        {full ? '★' : half ? '☆' : '☆'}
+        {full ? "★" : half ? "☆" : "☆"}
       </span>
     );
   });
@@ -20,12 +20,10 @@ const StarRating = ({ rating }) => {
 };
 
 export default function Teacher({ teacher }) {
-  // const [isFlipped, setIsFlipped] = useState(false);
-
   const [isFlipped, setIsFlipped] = useState(false);
-  const [reviews, setReviews] = useState([]);
+  const [reviews, setReviews] = useState(null);
 
-   const handleFlip = () => {
+  const handleFlip = () => {
     setIsFlipped(!isFlipped);
   };
 
@@ -34,7 +32,7 @@ export default function Teacher({ teacher }) {
       try {
         const response = await fetch(`/api/reviews/${teacher.id}`);
         if (!response.ok) {
-          throw new Error('Failed to fetch reviews');
+          throw new Error("Failed to fetch reviews");
         }
         const data = await response.json();
         setReviews(data);
@@ -43,10 +41,14 @@ export default function Teacher({ teacher }) {
       }
     }
 
-    if (teacher.id) {
+    if (teacher?.id) {
       fetchReviews();
     }
-  }, [teacher.id]); 
+  }, [teacher?.id]);
+
+  if (!teacher) {
+    return null; // Render nothing if teacher data is not available
+  }
 
   return (
     <div
@@ -55,20 +57,20 @@ export default function Teacher({ teacher }) {
       <div className={styles.front}>
         <div className={styles.backgroundContainer}></div>
         <div className={styles.imageContainer}>
-          {
-            console.log(teacher.image)
-          }
-          <Image
-            src={teacher.image} 
-            alt={teacher.name}  
-            width={100}
-            height={120}
-            className={styles.image}
-          />
+          {teacher.image && (
+            <Image
+              src={teacher.image}
+              alt={teacher.name}
+              width={100}
+              height={120}
+              className={styles.image}
+              crossOrigin="anonymous"
+            />
+          )}
         </div>
         <div className={styles.infoContainer}>
           <h3 className={styles.name}>{teacher.name}</h3>
-          <StarRating rating={parseFloat(reviews.rating)} /> 
+          {reviews && <StarRating rating={parseFloat(reviews.rating || 0)} />}
           <p className={styles.class}>{teacher.qualifications}</p>
           <p className={styles.class}>{teacher.teachingExperience}</p>
           <div className={styles.buttonContainer}>
@@ -82,18 +84,21 @@ export default function Teacher({ teacher }) {
       <div className={styles.back}>
         <div className={styles.infoContainer}>
           <h4 className={styles.backtitle}>Course Overview</h4>
-          <p>{teacher.courseOverview}</p> 
-          <div className={styles.reviews}>
-            <h4 className={styles.backtitle}>Reviews</h4>
-            <p>
-              Rating: {reviews.rating} - <span className={styles.reviewText}>"{reviews.text}"</span>
-            </p>
-            <div className={styles.buttonContainer}>
-              <button onClick={handleFlip} className={styles.bookBtn}>
-                Back
-              </button>
+          <p>{teacher.courseOverview}</p>
+          {reviews && (
+            <div className={styles.reviews}>
+              <h4 className={styles.backtitle}>Reviews</h4>
+              <p>
+                Rating: {reviews.rating} -{" "}
+                <span className={styles.reviewText}>"{reviews.text}"</span>
+              </p>
+              <div className={styles.buttonContainer}>
+                <button onClick={handleFlip} className={styles.bookBtn}>
+                  Back
+                </button>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </div>

@@ -25,6 +25,7 @@ export default function Home() {
         throw new Error(data.error);
       }
       setTeachers(data);
+      
     } catch (error) {
       console.error("Failed to fetch teachers:", error);
     } finally {
