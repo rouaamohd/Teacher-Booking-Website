@@ -17,6 +17,7 @@
     width: 100%;
     margin: 0 auto;
     opacity: 0;
+    z-index: 30;
     animation: fadeInLeft 1s ease forwards;
 }
 .Nav{
@@ -48,7 +49,9 @@
     list-style: none;
     color: var(--mygreen);
     font-weight: 500;
+    z-index: 10; 
 }
+
 .menu a {
     text-decoration: none;
     color: inherit;
@@ -108,7 +111,8 @@
     visibility: hidden;
     transform: translateY(-12px);
     transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
-    z-index: 1;
+    /* z-index: 1; */
+    z-index: 20;
     pointer-events: none;
     list-style: none;
 }
