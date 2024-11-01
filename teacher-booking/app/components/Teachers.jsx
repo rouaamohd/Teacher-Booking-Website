@@ -2,8 +2,7 @@
 
 import React, { useState } from "react"; 
 import Teacher from "./Teacher";
-import styles from "./teachers.module.css";
-
+import styles from "@/app/styles/teachers.module.css";
 export default function Teachers({ initialTeachers }) {
   const [teachers, setTeachers] = useState(initialTeachers || []);
 

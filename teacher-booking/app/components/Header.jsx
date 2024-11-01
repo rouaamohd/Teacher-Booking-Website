@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import styles from "./Header.module.css";
-import NavBar from "./NavBar";
+import styles from '@/app/styles/Header.module.css';
+import NavBar from "@/app/components/NavBar";
 
 export default function Header({ handleSearch, handleFilterSelect }) {
   return (

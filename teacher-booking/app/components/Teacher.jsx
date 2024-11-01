@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import styles from "./teacher.module.css";
+import styles from "@/app/styles/teacher.module.css";
 import Image from "next/image";
-import Link from "next/link";
 
 // Rating component
 const StarRating = ({ rating }) => {

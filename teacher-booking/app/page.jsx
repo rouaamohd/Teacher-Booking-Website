@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Loader from "./components/Loader";
-import Header from "./components/Header";
-import Teachers from "./teachers/Teachers";
-import styles from "./page.module.css";
+import Loader from "@/app/components/Loader";
+import Header from "@/app/components/Header";
+import Teachers from "@/app/components/Teachers";
+import styles from "@/app/styles/page.module.css";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
