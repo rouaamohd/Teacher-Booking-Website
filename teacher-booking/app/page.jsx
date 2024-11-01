@@ -15,25 +15,48 @@ export default function Home() {
   }, []);
 
   const fetchTeachers = async (val) => {
-    try {
-      const response = await fetch(`/api/teachers?query=${encodeURIComponent(val)}`);
-      if (!response.ok) {
-        throw new Error(`Error: ${response.statusText}`);
-      }
-      const data = await response.json();
-      if (data.error) {
-        throw new Error(data.error);
-      }
-      setTeachers(data);
-    } catch (error) {
-      console.error("Failed to fetch teachers:", error);
-    } finally {
-      // Delay the loading state change to show the loader for a bit longer
-      setTimeout(() => {
-        setLoading(false);
-      }, 1000); // Adjust the delay time (in milliseconds) as desired
+  try {
+    const response = await fetch(`/api/teachers/`);
+    if (!response.ok) {
+      throw new Error(`Error: ${response.statusText}`);
     }
-  };
+    const data = await response.json();
+    if (data.error) {
+      throw new Error(data.error);
+    }
+    setTeachers(data);
+  } catch (error) {
+    console.error("Failed to fetch teachers:", error);
+  } finally {
+    // Delay the loading state change to show the loader for a bit longer
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000); // Adjust the delay time (in milliseconds) as desired
+  }
+};
+
+const fetchSearchTeacher = async (val) => {
+  try {
+    const response = await fetch(`/api/teachers?query=${encodeURIComponent(val)}`);
+    if (!response.ok) {
+      throw new Error(`Error: ${response.statusText}`);
+    }
+    const data = await response.json();
+    if (data.error) {
+      throw new Error(data.error);
+    }
+    setTeachers(data);
+  } catch (error) {
+    console.error("Failed to fetch teachers:", error);
+  } 
+  finally {
+    // Delay the loading state change to show the loader for a bit longer
+    setTimeout(() => {
+      setLoading(false);
+    }); // Adjust the delay time (in milliseconds) as desired
+  }
+};
+
   const fetchTeachersBySubject = async (val) => {
     try {
       const response = await fetch(`/api/teachers?subject=${encodeURIComponent(val)}`);
@@ -54,7 +77,7 @@ export default function Home() {
 
   const handleSearch = (searchValue) => {
     setLoading(true);
-    fetchTeachers(searchValue);
+    fetchSearchTeacher(searchValue);
   };
 
   const handleFilter = (filter) => {
