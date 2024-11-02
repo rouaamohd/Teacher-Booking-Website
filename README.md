@@ -1,4 +1,4 @@
-### TeacherBooking 📚
+# TeacherBooking 📚
 
 **TeacherBooking** is a dynamic web application designed to streamline the process of finding and booking appointments with educational professionals across a variety of subjects.
 
