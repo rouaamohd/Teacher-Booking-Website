@@ -48,5 +48,8 @@
    npm run dev
    ```
 
+### Hosted Website
+You can directly view it by visiting the following link: https://teacher-booking-website-deployed.vercel.app/
+
 
 
