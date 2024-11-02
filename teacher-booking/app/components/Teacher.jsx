@@ -20,29 +20,29 @@ const StarRating = ({ rating }) => {
 
 export default function Teacher({ teacher }) {
   const [isFlipped, setIsFlipped] = useState(false);
-  const [reviews, setReviews] = useState(null);
+  // const [reviews, setReviews] = useState(null);
 
   const handleFlip = () => {
     setIsFlipped(!isFlipped);
   };
 
   useEffect(() => {
-    async function fetchReviews() {
-      try {
-        const response = await fetch(`/api/reviews/${teacher.id}`);
-        if (!response.ok) {
-          throw new Error("Failed to fetch reviews");
-        }
-        const data = await response.json();
-        setReviews(data);
-      } catch (error) {
-        console.error("Error fetching reviews:", error);
-      }
-    }
+    // async function fetchReviews() {
+    //   try {
+    //     const response = await fetch(`/api/reviews/${teacher.id}`);
+    //     if (!response.ok) {
+    //       throw new Error("Failed to fetch reviews");
+    //     }
+    //     const data = await response.json();
+    //     setReviews(data);
+    //   } catch (error) {
+    //     console.error("Error fetching reviews:", error);
+    //   }
+    // }
 
-    if (teacher?.id) {
-      fetchReviews();
-    }
+    // if (teacher?.id) {
+    //   fetchReviews();
+    // }
   }, [teacher?.id]);
 
   if (!teacher) {
@@ -69,7 +69,8 @@ export default function Teacher({ teacher }) {
         </div>
         <div className={styles.infoContainer}>
           <h3 className={styles.name}>{teacher.name}</h3>
-          {reviews && <StarRating rating={parseFloat(reviews.rating || 0)} />}
+          {/* {reviews && <StarRating rating={parseFloat(reviews.rating || 0)} />} */}
+          {teacher.reviews && <StarRating rating={parseFloat(teacher.reviews.rating || 0)} />}
           <p className={styles.class}>{teacher.qualifications}</p>
           <p className={styles.class}>{teacher.teachingExperience}</p>
           <div className={styles.buttonContainer}>
@@ -84,12 +85,14 @@ export default function Teacher({ teacher }) {
         <div className={styles.infoContainer}>
           <h4 className={styles.backtitle}>Course Overview</h4>
           <p>{teacher.courseOverview}</p>
-          {reviews && (
+          {teacher.reviews && (
             <div className={styles.reviews}>
               <h4 className={styles.backtitle}>Reviews</h4>
               <p>
-                Rating: {reviews.rating} -{" "}
-                <span className={styles.reviewText}>"{reviews.text}"</span>
+                {/* Rating: {reviews.rating} -{" "} */}
+                Rating: {teacher.reviews.rating} -{" "}
+                {/* <span className={styles.reviewText}>"{reviews.text}"</span> */}
+                <span className={styles.reviewText}>"{teacher.reviews.text}"</span>
               </p>
               <div className={styles.buttonContainer}>
                 <button onClick={handleFlip} className={styles.bookBtn}>
